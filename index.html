@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://code.angularjs.org/1.5.4/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro similique et! Rem laborum magni quasi blanditiis aperiam veniam, autem molestias laudantium quaerat fuga, eveniet doloribus sapiente! Necessitatibus, deleniti, laudantium.
+    </p>
+    <ul ng-controller = 'MainCtrl as vm'>
+    <form ng-submit="vm.postComment()">
+      <input ng-model="vm.comment" /required>
+      <input type="submit" value="Post a comment">
+    </form>
+    
+      <li ng-repeat = "comment in comments">
+        <comment-component comment="comment"></comment-component>
+      </li>
+    </ul>
+  </body>
+</html>

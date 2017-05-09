@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="plunker">
 
-  <head>
+<head>
     <meta charset="utf-8" />
     <title>AngularJS Plunker</title>
-    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script>
+    document.write('<base href="' + document.location + '" />');
+    </script>
     <link href="style.css" rel="stylesheet" />
     <script src="https://code.angularjs.org/1.5.4/angular.js"></script>
     <script src="app.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro similique et! Rem laborum magni quasi blanditiis aperiam veniam, autem molestias laudantium quaerat fuga, eveniet doloribus sapiente! Necessitatibus, deleniti, laudantium.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa neque sed laudantium reiciendis provident aspernatur enim sit magnam quaerat voluptates atque accusantium perspiciatis repudiandae, reprehenderit omnis voluptatum ipsam quae inventore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro similique et! Rem laborum magni quasi blanditiis aperiam veniam, autem molestias laudantium quaerat fuga, eveniet doloribus sapiente! Necessitatibus, deleniti, laudantium.
     </p>
-    <ul ng-controller = 'MainCtrl as vm'>
-    <form ng-submit="vm.postComment()">
-      <input ng-model="vm.comment" /required>
-      <input type="submit" value="Post a comment">
-    </form>
-    
-      <li ng-repeat = "comment in comments">
-        <comment-component comment="comment"></comment-component>
-      </li>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto autem iste nobis accusamus! Voluptatum odit autem error et inventore harum maxime obcaecati animi unde architecto, ut hic, facere, voluptatem. Sit.dolor sit amet, consectetur adipisicing elit. Architecto dicta delectus ratione aut at, velit, natus placeat sequi asperiores reiciendis sint molestiae est explicabo, voluptas soluta. Deleniti dicta perspiciatis ipsa. </p>
+    <ul ng-controller='MainCtrl as vm'>
+        <form ng-submit="vm.postComment()">
+            <input ng-model="vm.comment" /required>
+            <input type="submit" value="Post a comment">
+        </form>
+
+        <li ng-repeat="comment in comments track by $index">
+            <!-- //index used to keep track of comment level -->
+            <comment-component index="$index" comment="comment"></comment-component>
+        <hr>
+        </li>
+
+
     </ul>
-  </body>
+
+</body>
+
 </html>
